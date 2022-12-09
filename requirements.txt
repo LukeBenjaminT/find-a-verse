@@ -1,8 +1,5 @@
 numpy
 nltk
-nltk.corpus
-sklearn.feature_extraction.text
-sklearn.metrics.pairwise
+sklearn
 autocorrect
-nltk.tokenize
 streamlit

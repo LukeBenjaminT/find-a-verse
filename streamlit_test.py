@@ -16,8 +16,8 @@ nltk.download('omw-1.4')
 nltk.download('genesis')
 
 st.markdown('## Find-a-Verse')
-st.markdown('Find synonyms from the King James Version of the Bible (KJVB) to search for verses. \nIt has some work to do now - it may take a while. Wait for the search bar.')
-st.markdown('The program uses Cosine distance and Res similarity to search for bible verses from the KJVB. It tries to compare the underlying meaning of bible verses to a search phrase. Res simliarity uses word meanings from a contemporary context. It may give strange results, especially for uncommon words that are common in the KJVB. It also may miss things because the KJVB has older phrasing, e.g. bring forth a son. Cosine distance should give a more word for word result but takes longer to load.\n\n')
+st.markdown('This site runs a program that looks through the King James Version of the Bible (KJVB) to find verses. \nIt has some work to do generating synonyms now - it may take a while. I promise there will be a search bar, it just might take a minute to load.')
+st.markdown('The program uses Cosine distance and Res similarity to search for bible verses from the KJVB. Res simliarity uses synonyms and word meanings from a contemporary context to find results. It may give strange results, especially for uncommon words that are common in the KJVB. It also may miss things because the KJVB has older phrasing, e.g. bring forth a son. I chose KJVB because it is in the public domain. Cosine distance should give a more word for word result but takes longer to load.\n\n')
 
 def res_similarity_score(s1, s2):
     """

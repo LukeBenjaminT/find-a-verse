@@ -148,6 +148,7 @@ user_input = st.text_input(label="Type:\n",value="Christ",label_visibility="hidd
 
 #spell checker
 
+"""
 spell=Speller(lang="en")
 WORD = re.compile(r'\w+')
 def reTokenize(doc):
@@ -163,13 +164,13 @@ user_input  = spell_correct(user_input)
 
 #this is splitting into letters rtaher than words. ?
 st.markdown('\nSearching for "'+user_input+'"...\n')
-
+"""
 
 user_synsets = doc_to_synsets(user_input)
 
 top_ten = [(res_similarity_score(user_synsets,verse[2]),verse[0],verse[1]) for verse in verse_synsets]
 
-st.markdown('\n ### Res_similiarity results: ')
+st.markdown('\n ### Resnik similiarity results: ')
 
 top_ten.sort(reverse=True)
 top_ten = top_ten[0:5]

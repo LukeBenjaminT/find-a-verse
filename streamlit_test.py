@@ -10,6 +10,7 @@ from nltk.corpus import wordnet as wn
 from nltk.tokenize import word_tokenize
 
 nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
 
 st.markdown('## Find-a-Verse')
 st.markdown('Find synonyms from the King James Version of the Bible (KJVB) to search for verses. \nIt has some work to do now - it may take a while. Wait for the search bar.')

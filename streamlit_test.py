@@ -9,6 +9,8 @@ from autocorrect import Speller
 from nltk.corpus import wordnet as wn
 from nltk.tokenize import word_tokenize
 
+nltk.download('punkt')
+
 st.markdown('## Find-a-Verse')
 st.markdown('Find synonyms from the King James Version of the Bible (KJVB) to search for verses. \nIt has some work to do now - it may take a while. Wait for the search bar.')
 st.markdown('The program uses Cosine distance and Res similarity to search for bible verses from the KJVB. It tries to compare the underlying meaning of bible verses to a search phrase. Res simliarity uses word meanings from a contemporary context. It may give strange results, especially for uncommon words that are common in the KJVB. It also may miss things because the KJVB has older phrasing, e.g. bring forth a son. Cosine distance should give a more word for word result but takes longer to load.\n\n')

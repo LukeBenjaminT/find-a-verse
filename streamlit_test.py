@@ -8,6 +8,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from autocorrect import Speller
 from nltk.corpus import wordnet as wn
 from nltk.tokenize import word_tokenize
+import pickle
 
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
@@ -135,10 +136,18 @@ for book in bible_books:
         del bible_books[book][0]
 
 #makeing the verse_synsets - this takes a while
-verse_synsets = []
-for book in bible_books:
-    verse_synsets.extend((book,verse,doc_to_synsets(verse)) for verse in bible_books[book])
+#verse_synsets = []
+#for book in bible_books:
+#    verse_synsets.extend((book,verse,doc_to_synsets(verse)) for verse in bible_books[book])
 
+#Trying to replace the verse_synset creation with this
+
+verse_synsets = []
+for i in range(len(export_list)):
+    book = export_list[i][0]
+    verse = export_list[i][1]
+    synset_list = [wn.synset_from_pos_and_offset(export_list[i][2][j][0],export_list[i][2][j][1]) for j in range(len(export_list[i][2]))]
+    verse_synsets.append((book,verse,synset_list))
 
 genesis_ic = wn.ic(genesis, False, 0.0)
 

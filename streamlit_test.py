@@ -141,6 +141,8 @@ for book in bible_books:
 #    verse_synsets.extend((book,verse,doc_to_synsets(verse)) for verse in bible_books[book])
 
 #Trying to replace the verse_synset creation with this
+with open('verse_synsets_locations.pkl', 'rb') as f:
+    export_list = pickle.load(f)
 
 verse_synsets = []
 for i in range(len(export_list)):

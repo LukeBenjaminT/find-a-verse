@@ -171,7 +171,10 @@ def spell_correct(text):
     sptext = (' '.join([spell(w).lower() for w in reTokenize(text)]))      
     return sptext    
 
-user_input  = spell_correct(user_input)
+corrected = spell_correct(user_input)
+
+if user_input  != spell_correct(user_input):
+    st.markdown("Some words weren't in the spell checker, did you mean '"+corrected+"'?")
 
 #this is splitting into letters rtaher than words. ?
 st.markdown('\nSearching for "'+user_input+'"...\n')

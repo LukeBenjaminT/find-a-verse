@@ -173,7 +173,7 @@ def spell_correct(text):
 
 corrected = spell_correct(user_input)
 
-if user_input  != spell_correct(user_input):
+if user_input.lower()  != spell_correct(user_input):
     st.markdown("Some words weren't in the spell checker, did you mean '"+corrected+"'?")
 
 #this is splitting into letters rtaher than words. ?
